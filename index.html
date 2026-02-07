@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aushadhi 360 – AI Healthcare Ecosystem Flow</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 1400px;
+      margin: auto;
+      background: #020617;
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .mermaid {
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Aushadhi 360 – AI Healthcare Ecosystem</h1>
+  <div class="container">
+    <div class="mermaid">
+      graph TD
+
+      %% Roles
+      Patient[👤 Patient]
+      Doctor[👨‍⚕️ Doctor]
+      Store[🏪 Medical Store]
+      Vendor[🏭 Vendor/Manufacturer]
+      Admin[🛡️ Admin]
+      AI[🤖 AI Healthcare Assistant]
+      Avatar[🧑‍⚕️ 3D AI Doctor]
+
+      %% Core Systems
+      Platform[Aushadhi 360 Platform]
+      Ecommerce[B2B Medicine Marketplace]
+      B2C[B2C Medicine Ordering]
+      Inventory[Auto Inventory Sync]
+      Reports[Medical Reports Upload]
+      RAG[RAG Medical Knowledge Base]
+      Emergency[🚨 Emergency System]
+
+      %% Patient Flow
+      Patient -->|Signup| Platform
+      Patient -->|Upload Reports| Reports
+      Reports --> AI
+      AI -->|Insights & Alerts| Patient
+      AI --> Avatar
+      Avatar -->|Voice Explanation| Patient
+
+      %% Doctor Flow
+      Doctor -->|Apply| Admin
+      Admin -->|Verify| Doctor
+      Doctor -->|Consult| Patient
+
+      %% Appointment System
+      Patient -->|Book Appointment| Platform
+      Platform --> Doctor
+
+      %% B2B Flow
+      Store --> Ecommerce
+      Vendor --> Ecommerce
+      Ecommerce --> Store
+      Ecommerce --> Inventory
+
+      %% B2C Flow
+      Patient --> B2C
+      B2C --> Store
+      Store -->|Deliver| Patient
+
+      %% Emergency
+      AI -->|Critical Detection| Emergency
+      Patient -->|Emergency Button| Emergency
+      Emergency -->|Alert| Doctor
+      Emergency -->|Alert| Store
+
+      %% Revenue
+      Patient -->|Pay| Platform
+      Platform --> Doctor
+      Platform --> Store
+      Platform --> Vendor
+
+      %% Knowledge
+      RAG --> AI
+      Reports --> RAG
+    </div>
+  </div>
+
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: "dark" });
+  </script>
+</body>
+</html>
